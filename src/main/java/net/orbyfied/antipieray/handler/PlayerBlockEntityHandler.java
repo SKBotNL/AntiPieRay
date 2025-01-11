@@ -176,7 +176,7 @@ public class PlayerBlockEntityHandler extends ChannelDuplexHandler implements Li
         long x = (long)(packed & 0xFF)  * cuX16; packed <<= 8;
         long y =        packed & 0xFFFF        ; packed <<= 16;
         long z = (long)(packed & 0xFF)  * cuZ16;
-        return new BlockPos(x, y, z);
+        return new BlockPos((int)x, (int)y, (int)z);
     }
 
     // the current world access
@@ -383,7 +383,7 @@ public class PlayerBlockEntityHandler extends ChannelDuplexHandler implements Li
                 long z = cz + SectionPos.sectionRelative(packedXZ);
 
                 // check block
-                if (!checkBlockOrMark(new BlockPos(x, y, z).getCenter())) {
+                if (!checkBlockOrMark(new BlockPos((int)x, y, (int)z).getCenter())) {
                     iterator.remove();
                 }
             }

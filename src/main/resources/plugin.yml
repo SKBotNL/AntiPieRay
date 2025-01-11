@@ -1,9 +1,9 @@
 # properties
 name: AntiPieRay
-version: 1.0.0
+version: '${version}'
 main: net.orbyfied.antipieray.AntiPieRay
 description: Attempts to prevent the usage of the PieRay exploit to find bases.
-api-version: 1.19
+api-version: '${apiVersion}'
 
 # libraries
 libraries:
